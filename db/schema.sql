@@ -11,7 +11,6 @@ CREATE TABLE blooms (
     sender_id INT NOT NULL REFERENCES users(id),
     content TEXT NOT NULL,
     send_timestamp TIMESTAMP NOT NULL,
-    is_rebloom BOOLEAN DEFAULT FALSE,
     original_bloom_id BIGINT REFERENCES blooms(id) ON DELETE SET NULL,
     rebloomed_by_id INTEGER REFERENCES users(id) ON DELETE SET NULL
 );
